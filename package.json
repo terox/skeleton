@@ -1,0 +1,24 @@
+{
+  "name": "skeleton",
+  "author": "David Pérez Terol <davidtxnet@gmail.com>",
+  "version": "0.0.1",
+  "description": "",
+  "main": "./lib/index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "bluebird": "^2.4.3",
+    "fs-extra": "^0.13.0",
+    "lodash": "^2.4.1"
+  },
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "chai-fs": "^0.1.0",
+    "mocha": "^2.1.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,6 @@
+--require chai
+--require chai-fs
+--reporter spec
+--recursive
+--slow 300
+--timeout 10000

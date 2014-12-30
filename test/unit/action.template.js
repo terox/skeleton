@@ -17,8 +17,8 @@ describe('Action: template', function() {
   };
 
   var config = {
-    path    : 'templates/README.tpl',
-    payload : { name: 'Hello world!' }
+    path : 'templates/README.tpl',
+    data : { name: 'Hello world!' }
   };
 
   it('should create file from template', function(done) {
@@ -27,7 +27,7 @@ describe('Action: template', function() {
       .then(function() {
 
         destination.should.be.a.file('File is empty').and.not.empty;
-        destination.should.have.content(config.payload.name + '\n', 'Template failed')
+        destination.should.have.content(config.data.name + '\n', 'Template failed')
 
         done();
       })

@@ -16,9 +16,13 @@ First of all, create a manifest:
 // sk/manifest.js
 module.exports = {
 
+  defaultData: {
+    name: 'unnmaed'
+  },
+
   scaffold: {
     'app/components' : { action: 'folder',   mode: 0777 },
-    'app/README.md'  : { action: 'template', path: 'templates/README.tpl', payload: { name: 'Testing' } },
+    'app/README.md'  : { action: 'template', path: 'templates/README.tpl', data: { name: 'Testing' } },
     'app/assets/'    : { action: 'copy',     path: 'assets/subdir' }
   }
 

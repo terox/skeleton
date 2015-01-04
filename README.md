@@ -29,7 +29,7 @@ module.exports = {
 }
 ```
 **Take care**: in subdir ```sk/``` you need to have your templates. You see above
-example or take a fast review to testing [fixtures](https://github.com/terox/skeleton/test/fixtures)
+example or take a fast review to testing [fixtures](https://github.com/terox/skeleton/tree/master/test/fixtures)
 
 Now you can create the skeleton:
 ```javascript

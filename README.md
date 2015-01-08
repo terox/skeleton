@@ -2,6 +2,7 @@
 [![NPM Package Version](https://img.shields.io/npm/v/fskeleton.svg?style=flat)](https://www.npmjs.com/package/fskeleton)
 [![Downloads](https://img.shields.io/npm/dm/fskeleton.svg?style=flat)](https://www.npmjs.com/package/fskeleton)
 [![Build Status](https://travis-ci.org/terox/skeleton.svg)](https://travis-ci.org/terox/skeleton)
+[![Code Climate](https://codeclimate.com/github/terox/skeleton/badges/gpa.svg)](https://codeclimate.com/github/terox/skeleton)
 
 > Easy and fast library for generate file and folder structure in your
 > projects with a very small effort.

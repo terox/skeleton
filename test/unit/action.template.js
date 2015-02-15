@@ -13,7 +13,7 @@ describe('Action: template', function() {
   var destination = './.tests/dist/README.md';
 
   var scope = {
-    rootPath : __dirname + '/../fixtures/',
+    rootPath : __dirname + '/../fixtures/'
   };
 
   var config = {

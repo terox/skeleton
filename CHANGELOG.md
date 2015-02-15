@@ -1,3 +1,8 @@
+##### 0.2.3 - 15 February 2015
+
+##### Other
+- Small fixes.
+
 ##### 0.2.0 - 15 February 2015
 
 0.2.0 - Stable version

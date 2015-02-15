@@ -5,23 +5,34 @@
 [![Code Climate](https://codeclimate.com/github/terox/skeleton/badges/gpa.svg)](https://codeclimate.com/github/terox/skeleton)
 [![Inline docs](http://inch-ci.org/github/terox/skeleton.svg?branch=master)](http://inch-ci.org/github/terox/skeleton)
 
-> Easy and fast library for generate file and folder structure in your
-> projects with a very small effort.
+>Easy and fast library for generate file and folder structures in your
+>projects with a very small effort.
 
-## Installation
+***Features***:
+
+* Small footprint library.
+* 
+
+
+## Getting Started
+
+Skeleton works with ***generators***. A generator are a directory with files, 
+folders and templates that will be created in some location of your file system.
+
+The main file of generator is known as "manifest". Manifest defines all actions 
+that will be done. For example: create, copy o generate files from predefined 
+templates. In this directory we have files and folder structure that contains 
+the templates or files that we will work with it.
+
+Skeleton is a very simplified concept of [yeoman](https://github.com/yeoman/yo) 
+generators. I try to avoid the complexity of this project to put in your hands
+a very useful library.
+
+### Installation
 
 ```
 npm install fskeleton --save
 ```
-
-## Getting Started
-
-Skeleton has a main file known as "manifest" inside a directory. Manifest
-defines all actions that will be done. For example: create, copy o generate
-files from predefined templates. In this directory we have files and folder structure that contains the templates or files that we will work with it.
-
-All set of files and folders we know it as **generator**. It is a very simplified
-concept of [yeoman](https://github.com/yeoman/yo) generators, if it can help you.
 
 ### Creating a *generator*
 
@@ -30,10 +41,13 @@ Only create a directory and put inside it a file called **manifest.js**:
 /home/me/fskeleton/sk/
 └── manifest.js
 ```
+> ***Note***: you can name this file with other name, but you need to remember
+> it when you instantiate the generator.
+
 You are free to define the internal folder and file structure, like where locate
 templates, assets and other types of files. My recommendation is follow some
-methodology. You can study and follow or test [fixtures](https://github.com/terox/skeleton/tree/master/test/fixtures). For
-example:
+methodology. You can study and follow our test [fixtures](https://github.com/terox/skeleton/tree/master/test/fixtures).
+For example:
 ```
 /home/me/fskeleton/sk/
 ├── manifest.js
@@ -48,10 +62,11 @@ example:
          └── asset4.jpg
 ```
 
+### Creating the *manifest.js* file
 
-### Creating the *manifest* file
+First of all, create a ```manifest.js```. This file tells Skeleton how deal with
+files inside generator. The ***scaffold property must be defined***.
 
-First of all, create a manifest:
 ```javascript
 // /home/me/fkeleton/sk/manifest.js
 module.exports = {
@@ -83,6 +98,7 @@ module.exports = {
 
 }
 ```
+
 ### Using *before* trigger
 
 You can add to your manifest a ```before``` function to change scaffold object
@@ -116,16 +132,18 @@ module.exports = {
 
   // ......
 }
-
-
 ```
 
 ### Use
 
-Now you can create the skeleton:
+There are two ways for deploy structures:
+
+#### Traditional way:
+
+You define all scope object at instantiation time.
+
 ```javascript
 var Skeleton = require('fskeleton');
-var manifest = require('./sk/manifest.js')
 
 // Optional argument and object. It will create a data object for each path in
 // scaffold object. Take care! if some data object is defined, it will be merged
@@ -134,9 +152,9 @@ var data = {
 };
 
 var sk = new Skeleton({
-  rootPath   : '/home/me/fskeleton/sk',  // Where is the generator
-  targetPath : '/tmp/',                  // Where will be created the structure
-}, manifest, data);
+  generator : '/home/me/fskeleton/sk',  // Where is the generator
+  dest      : '/tmp/',                  // Where will be created the structure
+}, data);
 
 // Create structure in file system
 sk.create()
@@ -145,6 +163,33 @@ sk.create()
   })
 ;  
 ```
+
+#### Shortcut way:
+
+You can use this way for [skeleton-prompt](https://github.com/terox/skeleton-prompt)
+and ask scope variables like ```dest``` or for complete ```data``` object.
+
+```javascript
+var Skeleton = require('fskeleton');
+
+var data = {
+  components: ['component1', 'component2']
+};
+
+// You can use '/home/me/fskeleton/sk/othermanifes.js', by default it search
+// manifest.js
+var sk = new Skeleton('/home/me/fskeleton/sk', data);
+
+sk.scope('dest', '/tmp/');
+
+// Create structure in file system
+sk.create()
+  .then(function() {
+    // Do things when finish...
+  })
+;  
+```
+
 Remember that ```sk.create()``` returns a promise object. I use [bluebird](https://github.com/petkaantonov/bluebird) library.
 
 ## License

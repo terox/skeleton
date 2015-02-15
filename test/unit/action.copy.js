@@ -23,7 +23,7 @@ describe('Action: copy', function() {
     fs.remove(destinationFolder, function(err) {
 
       if(err) {
-        throw new Error(err);
+        done(err);
       }
 
       done();

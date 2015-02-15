@@ -9,10 +9,8 @@
 >projects with a very small effort.
 
 ***Features***:
-
 * Small footprint library.
-* 
-
+* You can use interfaces like a prompt with [skeleton-prompt](https://github.com/terox/skeleton-prompt).
 
 ## Getting Started
 

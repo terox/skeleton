@@ -1,7 +1,7 @@
 {
   "name": "fskeleton",
   "author": "David Pérez Terol <davidtxnet@gmail.com>",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Easy and fast library for generate file and folder structures in your projects with a very small effort.",
   "main": "./lib/index.js",
   "directories": {

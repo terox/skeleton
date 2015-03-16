@@ -4,6 +4,7 @@
 [![Build Status](https://travis-ci.org/terox/skeleton.svg)](https://travis-ci.org/terox/skeleton)
 [![Code Climate](https://codeclimate.com/github/terox/skeleton/badges/gpa.svg)](https://codeclimate.com/github/terox/skeleton)
 [![Inline docs](http://inch-ci.org/github/terox/skeleton.svg?branch=master)](http://inch-ci.org/github/terox/skeleton)
+[![Gratipay](http://img.shields.io/gratipay/terox.svg)](https://gratipay.com/terox/)
 
 >Easy and fast library for generate file and folder structures in your
 >projects with a very small effort.
